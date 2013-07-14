@@ -8,7 +8,7 @@ Insert the viewport.min.js code in the document `head`, preferably at the earlie
 Find the function call 'mobileWidth(600);` and set it to the width (in pixels) that you want the viewport tags to render.
 
 The default viewport metatag settings are:  
-    width=device-width initial-scale=1
+`width=device-width initial-scale=1`
 
 Note that it also has orientation detection and substitution, so that rotated devices will use the widest aspect.
 
