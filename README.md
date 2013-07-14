@@ -7,13 +7,14 @@ A small JS script to insert the viewport meta tag into an HTML document's head a
 Insert the viewport.min.js code in the document `head`, preferably at the earliest point after the opening `<head>` tag.
 Find the function call 'mobileWidth(600);` and set it to the width (in pixels) that you want the viewport tags to render.
 
-The default viewport metatag settings are:  
-`width=device-width initial-scale=1`
+The default viewport metatag settings are: `width=device-width initial-scale=1`
 
 Note that it also has orientation detection and substitution, so that rotated devices will use the widest aspect.
 
-The function `mobileWidth();` makes two variable available to the global window object:  
-`objectWidth` - the smaller of window or screen, based on device orientation.  
+The function `mobileWidth();` makes two variable available to the global window object:
+
+`objectWidth` - the smaller of window or screen, based on device orientation.
+
 `triggerWidth` -  the width you set to trigger setviewport();
 
 
