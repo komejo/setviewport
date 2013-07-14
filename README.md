@@ -35,5 +35,7 @@ The purpose of making these available globally is to allow for additional JS/jQu
 ## License and Credits
 
 © 2013 <a href="https://github.com/komejo">Komejo</a>. Created by <a href="http://twitter.com/KomejoDev">Joe Komenda</a>.
-<br />
+
+Compressed using http://refresh-sf.com/yui/
+
 setviewport.js is released under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.
