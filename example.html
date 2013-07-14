@@ -4,10 +4,10 @@
 	<meta charset="utf-8">
     <title>viewport.js example</title>
     <!-- See viewport.js for details on this -->
-    <script>function mobileWidth(b){window.objectWidth;window.triggerWidth=b;var c=screen.width,e=screen.height,a=document.documentElement.clientWidth,d=document.documentElement.clientHeight;if(c<=a){a=c}if(e<=d){d=e}if(window.orientation===undefined){objectWidth=a}else{if(window.orientation===0){objectWidth=c}else{objectWidth=e}}}var hasViewport=document.getElementById("viewport"),docHead=document.getElementsByTagName("head")[0],viewport=document.createElement("meta");viewport.id="viewport";viewport.name="viewport";viewport.content="width=device-width initial-scale=1";mobileWidth(800);if(objectWidth<=triggerWidth&&!hasViewport){docHead.appendChild(viewport)};</script>
+    <script>function mobileWidth(b){window.objectWidth;window.triggerWidth=b;var c=screen.width,e=screen.height,a=document.documentElement.clientWidth,d=document.documentElement.clientHeight;if(c<=a){a=c}if(e<=d){d=e}if(window.orientation===undefined){objectWidth=a}else{if(window.orientation===0){objectWidth=c}else{objectWidth=e}}}var hasViewport=document.getElementById("viewport"),docHead=document.getElementsByTagName("head")[0],viewport=document.createElement("meta");viewport.id="viewport";viewport.name="viewport";viewport.content="width=device-width initial-scale=1";mobileWidth(600);if(objectWidth<=triggerWidth&&!hasViewport){docHead.appendChild(viewport)};</script>
 	<style>
 		.bigblock {
-			width: 1200px;
+			width: 900px;
 			border: 10px solid green;
 		}
 		@media screen and (max-width: 600px) {
@@ -19,9 +19,14 @@
 	</style>
 </head>
 <body>
-    <div>
-        <h2>Simple example</h2>
-        <div class="bigblock">This is a big block-level element if the browser width is less than 1200px, you get a scrollbar. On most mobile devices, scaling will make it fit the screen. However, below 600px, scaling will be turned off by the setviewport.js code. At that point, we can apply our responsive styles.</div>
+    <h2>Simple example</h2>
+    <div class="bigblock">
+    	<p>This is a big block-level element, set to 900px wide.</p>
+
+    	<p>On mobile devices, scaling will try to make it fit the screen. However, below 600px (2/3 of the original), we want scaling turned off so that we can apply our responsive styles.</p>
+
+    	<p>Note: you should set the trigger width to a number that works best for your site/design.</p>
+
     </div>
 </body>
 </html>

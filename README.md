@@ -10,6 +10,12 @@ Find the function call 'mobileWidth(600);` and set it to the width (in pixels) t
 The default viewport metatag settings are:
     width=device-width initial-scale=1
 
+Note that it also has orientation detection and substitution, so that rotated devices will use the widest aspect.
+
+The function `mobileWidth();` makes two variable available to the global window object:
+`objectWidth` - the smaller of window or screen, based on device orientation.
+`triggerWidth` -  the width you set to trigger setviewport();
+
 Edit as you see fit.
 
 

@@ -1,7 +1,16 @@
 /* This script inserts a viewport metatag into the document head,
    based on the width set in the mobileWidth(); function call below.
    Useful if you want device scaling to be the default behavior for
-   most devices (desktop, tablet, etc.).
+   large mobile devices, such as tablets.
+
+   Note that it also has orientation detection and substitution,
+   so that rotated devices will use the widest aspect.
+
+   The function mobileWidth(); makes two variable available to the
+   global window object:
+        objectWidth  -  the smaller of window or screen,
+                        based on device orientation.
+        triggerWidth -  the width you set to trigger setviewport();
 */
 
 function mobileWidth(width) {
