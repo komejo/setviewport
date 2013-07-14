@@ -23,7 +23,7 @@ The function `mobileWidth();` adds two variables to the global window object:
 
 `triggerWidth` -  the width you set when calling `mobileWidth()`, used to trigger `setviewport()`
 
-The propose of making these available globally is to allow for additional JS/jQuery usage, for example, in your main JS file, you could have the following:
+The purpose of making these available globally is to allow for additional JS/jQuery usage, for example, in your main JS file, you could have the following:
 
     var isMobile = false;
     if ( objectWidth <= triggerWidth ) {
