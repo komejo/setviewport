@@ -36,6 +36,6 @@ The purpose of making these available globally is to allow for additional JS/jQu
 
 © 2013 <a href="https://github.com/komejo">Komejo</a>. Created by <a href="http://twitter.com/KomejoDev">Joe Komenda</a>.
 
-Compressed using http://refresh-sf.com/yui/
+Minified using http://refresh-sf.com/yui/
 
 setviewport.js is released under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.
