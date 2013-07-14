@@ -1,22 +1,24 @@
-/* This script inserts a viewport metatag into the document head,
-   based on the width set in the mobileWidth(); function call below.
-   Useful if you want device scaling to be the default behavior for
-   large mobile devices, such as tablets.
+/* setviewport v1.01, by Joe Komenda (Komejo). Copyright 2013, MIT Licence.
 
-   Note that it also has orientation detection and substitution,
-   so that rotated devices will use the widest aspect.
+  This script inserts a viewport metatag into the document head,
+  based on the width set in the mobileWidth(); function call below.
+  Useful if you want device scaling to be the default behavior for
+  large mobile devices, such as tablets.
 
-   The function mobileWidth(); makes two variable available to the
-   global window object:
-        objectWidth  -  the smaller of window or screen,
-                        based on device orientation.
-        triggerWidth -  the width you set to trigger setviewport();
+  Note that it also has orientation detection and substitution,
+  so that rotated devices will use the widest aspect.
+
+  The function mobileWidth(); makes two variable available to the
+  global window object:
+    svpObjectWidth  -  window or screen (whichever is smaller),
+                       based on device orientation.
+    svpTriggerWidth -  the width you set to trigger setviewport();
 */
 
 function mobileWidth(width) {
-    // Make objectWidth and triggerWidth available as global objects
-    window.objectWidth;
-    window.triggerWidth  = width;
+    // Make svpObjectWidth and svpTriggerWidth available as global objects
+    window.svpObjectWidth;
+    window.svpTriggerWidth  = width;
     var screenWidth      = screen.width,
         screenHeight     = screen.height,
         windowWidth      = document.documentElement.clientWidth,
@@ -28,11 +30,11 @@ function mobileWidth(width) {
 
     // use the height to set dimensions in landscape mode.
     if (window.orientation === undefined) {
-        objectWidth = windowWidth;
+        svpObjectWidth = windowWidth;
     } else if (window.orientation === 0) {
-        objectWidth = screenWidth;
+        svpObjectWidth = screenWidth;
     } else {
-       objectWidth = screenHeight;
+       svpObjectWidth = screenHeight;
     };
 };
 
@@ -45,6 +47,6 @@ var hasViewport   = document.getElementById('viewport'),
 
 mobileWidth(600);
 
-if ( objectWidth <= triggerWidth && !hasViewport) {
+if ( svpObjectWidth <= svpTriggerWidth && !hasViewport) {
     docHead.appendChild(viewport);
 };

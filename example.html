@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
     <title>viewport.js example</title>
     <!-- See viewport.js for details on this -->
-    <script>function mobileWidth(b){window.objectWidth;window.triggerWidth=b;var c=screen.width,e=screen.height,a=document.documentElement.clientWidth,d=document.documentElement.clientHeight;if(c<=a){a=c}if(e<=d){d=e}if(window.orientation===undefined){objectWidth=a}else{if(window.orientation===0){objectWidth=c}else{objectWidth=e}}}var hasViewport=document.getElementById("viewport"),docHead=document.getElementsByTagName("head")[0],viewport=document.createElement("meta");viewport.id="viewport";viewport.name="viewport";viewport.content="width=device-width initial-scale=1";mobileWidth(600);if(objectWidth<=triggerWidth&&!hasViewport){docHead.appendChild(viewport)};</script>
+    <script>function mobileWidth(b){window.svpObjectWidth;window.svpTriggerWidth=b;var c=screen.width,e=screen.height,a=document.documentElement.clientWidth,d=document.documentElement.clientHeight;if(c<=a){a=c}if(e<=d){d=e}if(window.orientation===undefined){svpObjectWidth=a}else{if(window.orientation===0){svpObjectWidth=c}else{svpObjectWidth=e}}}var hasViewport=document.getElementById("viewport"),docHead=document.getElementsByTagName("head")[0],viewport=document.createElement("meta");viewport.id="viewport";viewport.name="viewport";viewport.content="width=device-width initial-scale=1";mobileWidth(600);if(svpObjectWidth<=svpTriggerWidth&&!hasViewport){docHead.appendChild(viewport)};</script>
 	<style>
 		.bigblock {
 			width: 900px;
