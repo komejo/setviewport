@@ -33,7 +33,7 @@ The purpose of making these available globally is to allow for additional JS/jQu
         isMobile = true;
     }
 
-See extended example in [app.js](https://github.com/komejo/setviewport/blob/master/example.html)
+See extended example in [app.js](https://github.com/komejo/setviewport/blob/master/app.js)
 
 ## License and Credits
 
