@@ -8,7 +8,7 @@ A small script (JS) to insert the viewport meta tag into an HTML document's `hea
 Insert the viewport.js code in the document `head`, preferably at the earliest point after the opening `<head>` tag.
 Find the `window.triggerWidth;` global and set it to the width (in pixels) that you want the viewport tag to render.
 
-[See live example](http://komejo.com/setviewport/example.html) This is a clone of the code in [example.html](https://github.com/komejo/setviewport/blob/master/example.html)
+[See live example](http://komejo.com/setviewport/example.html) This is a same code as [example.html](https://github.com/komejo/setviewport/blob/master/example.html)
 
 
 600 (pixels) is the default.
@@ -20,11 +20,11 @@ Note that it also has orientation detection and substitution, so that rotated de
 
 ## Available Vars:
 
-The function `mobileWidth();` adds two variables to the global window object:
+The function `mobileWidth();` adds a variable to the global window object:
 
 `viewportWidth` - window or screen (whichever is smaller), based on device orientation.
 
-`triggerWidth` -  the width you set when calling `mobileWidth()`, used to trigger `addViewport()`
+In addition, we set the `triggerWidth` -  the width you set when calling `mobileWidth()`, also used to trigger `addViewport()`
 
 The purpose of making these available globally is to allow for additional JS/jQuery usage, for example, in your main JS file, you could have the following:
 
@@ -34,7 +34,6 @@ The purpose of making these available globally is to allow for additional JS/jQu
     }
 
 See extended example in [app.js](https://github.com/komejo/setviewport/blob/master/example.html)
-
 
 ## License and Credits
 
