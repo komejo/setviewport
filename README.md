@@ -5,8 +5,8 @@ A small script (JS) to insert the viewport meta tag into an HTML document's `hea
 
 ## Basic Use:
 
-Insert the viewport.min.js code in the document `head`, preferably at the earliest point after the opening `<head>` tag.
-Find the function call 'mobileWidth(600);` and set it to the width (in pixels) that you want the viewport tag to render.
+Insert the viewport.js code in the document `head`, preferably at the earliest point after the opening `<head>` tag.
+Find the `window.triggerWidth;` global and set it to the width (in pixels) that you want the viewport tag to render.
 [See example](https://github.com/komejo/setviewport/blob/master/example.html)
 
 600 (pixels) is the default.
@@ -20,22 +20,22 @@ Note that it also has orientation detection and substitution, so that rotated de
 
 The function `mobileWidth();` adds two variables to the global window object:
 
-`svpObjectWidth` - window or screen (whichever is smaller), based on device orientation.
+`viewportWidth` - window or screen (whichever is smaller), based on device orientation.
 
-`svpTriggerWidth` -  the width you set when calling `mobileWidth()`, used to trigger `setviewport()`
+`triggerWidth` -  the width you set when calling `mobileWidth()`, used to trigger `addViewport()`
 
 The purpose of making these available globally is to allow for additional JS/jQuery usage, for example, in your main JS file, you could have the following:
 
     var isMobile = false;
-    if ( objectWidth <= triggerWidth ) {
+    if ( viewportWidth <= triggerWidth ) {
         isMobile = true;
     }
+
+See extended example in [app.js](https://github.com/komejo/setviewport/blob/master/example.html)
 
 
 ## License and Credits
 
-© 2013 <a href="https://github.com/komejo">Komejo</a>. Created by <a href="http://twitter.com/KomejoDev">Joe Komenda</a>.
-
-Minified using http://refresh-sf.com/yui/
+© 2013,2014 <a href="https://github.com/komejo">Komejo</a>. Created by <a href="http://twitter.com/KomejoDev">Joe Komenda</a>.
 
 setviewport.js is released under the <a href="http://opensource.org/licenses/MIT">MIT license</a>.

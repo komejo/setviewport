@@ -3,8 +3,20 @@
 <head>
 	<meta charset="utf-8">
     <title>viewport.js example</title>
-    <!-- See viewport.js for details on this -->
-    <script>function mobileWidth(b){window.svpObjectWidth;window.svpTriggerWidth=b;var c=screen.width,e=screen.height,a=document.documentElement.clientWidth,d=document.documentElement.clientHeight;if(c<=a){a=c}if(e<=d){d=e}if(window.orientation===undefined){svpObjectWidth=a}else{if(window.orientation===0){svpObjectWidth=c}else{svpObjectWidth=e}}}var hasViewport=document.getElementById("viewport"),docHead=document.getElementsByTagName("head")[0],viewport=document.createElement("meta");viewport.id="viewport";viewport.name="viewport";viewport.content="width=device-width initial-scale=1";mobileWidth(600);if(svpObjectWidth<=svpTriggerWidth&&!hasViewport){docHead.appendChild(viewport)};</script>
+    <!-- See setviewport.js for details on this -->
+    <script>
+            function mobileWidth(){window.viewportWidth;var c=screen.width,e=screen.height,a=document.documentElement.clientWidth,d=document.documentElement.clientHeight;if(c<=a){a=c}if(e<=d){d=e}if(window.orientation===undefined){viewportWidth=a}else{if(window.orientation===0){viewportWidth=c}else{viewportWidth=e}}};
+            function addViewport(){docHead.appendChild(viewport)};
+            var hasViewport=document.getElementById("viewport"),
+                docHead=document.getElementsByTagName("head")[0],
+                viewport=document.createElement("meta");
+                viewport.id="viewport";
+                viewport.name="viewport";
+                viewport.content="width=device-width initial-scale=1";
+            window.triggerWidth=600;
+            mobileWidth();
+            if(viewportWidth<=triggerWidth&&!hasViewport){addViewport()};
+        </script>
 	<style>
 		.bigblock {
 			width: 900px;

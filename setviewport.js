@@ -1,4 +1,4 @@
-/* setviewport v1.01, by Joe Komenda (Komejo). Copyright 2013, MIT Licence.
+/* setviewport v1.02, by Joe Komenda (Komejo). Copyright 2014, MIT Licence.
 
   This script inserts a viewport metatag into the document head,
   based on the width set in the mobileWidth(); function call below.
@@ -10,43 +10,42 @@
 
   The function mobileWidth(); makes two variable available to the
   global window object:
-    svpObjectWidth  -  window or screen (whichever is smaller),
-                       based on device orientation.
-    svpTriggerWidth -  the width you set to trigger setviewport();
+    viewportWidth  -  window or screen (whichever is smaller),
+                      based on device orientation.
+    triggerWidth -  the width you set to trigger setviewport();
 */
 
-function mobileWidth(width) {
-    // Make svpObjectWidth and svpTriggerWidth available as global objects
-    window.svpObjectWidth;
-    window.svpTriggerWidth  = width;
-    var screenWidth      = screen.width,
-        screenHeight     = screen.height,
-        windowWidth      = document.documentElement.clientWidth,
-        windowHeight     = document.documentElement.clientHeight;
+<script>
+    function mobileWidth(){
+      window.viewportWidth;
+      var c=screen.width,
+      e=screen.height,
+      a=document.documentElement.clientWidth,
+      d=document.documentElement.clientHeight;
 
-    // set the smaller of browser and screen width/height
-    if (screenWidth <= windowWidth) { windowWidth = screenWidth };
-    if (screenHeight <= windowHeight) { windowHeight = screenHeight };
-
-    // use the height to set dimensions in landscape mode.
-    if (window.orientation === undefined) {
-        svpObjectWidth = windowWidth;
-    } else if (window.orientation === 0) {
-        svpObjectWidth = screenWidth;
-    } else {
-       svpObjectWidth = screenHeight;
+      if(c<=a){a=c}
+      if(e<=d){d=e}
+      if(window.orientation===undefined){
+        viewportWidth=a
+      }else{
+        if(window.orientation===0){
+          viewportWidth=c
+        }else{
+          viewportWidth=e
+        }
+      }
     };
-};
 
-var hasViewport   = document.getElementById('viewport'),
-    docHead       = document.getElementsByTagName('head')[0],
-    viewport      = document.createElement('meta');
-        viewport.id     = 'viewport';
-        viewport.name   = 'viewport';
-        viewport.content= 'width=device-width initial-scale=1';
+    function addViewport(){docHead.appendChild(viewport)};
 
-mobileWidth(600);
+    var hasViewport=document.getElementById("viewport"),
+        docHead=document.getElementsByTagName("head")[0],
+        viewport=document.createElement("meta");
+        viewport.id="viewport";
+        viewport.name="viewport";
+        viewport.content="width=device-width initial-scale=1";
+    window.triggerWidth=640;
+    mobileWidth();
 
-if ( svpObjectWidth <= svpTriggerWidth && !hasViewport) {
-    docHead.appendChild(viewport);
-};
+    if(viewportWidth<=triggerWidth&&!hasViewport){addViewport()};
+</script>
