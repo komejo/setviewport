@@ -1,7 +1,7 @@
 #setviewport
 
 A small script (JS) to insert the viewport meta tag into an HTML document's `head` at a specified width.
-
+Now with example app.js script to clarify use of the global vars.
 
 ## Basic Use:
 
@@ -9,7 +9,6 @@ Insert the viewport.js code in the document `head`, preferably at the earliest p
 Find the `window.triggerWidth;` global and set it to the width (in pixels) that you want the viewport tag to render.
 
 [See live example](http://komejo.com/setviewport/example.html) This is a same code as [example.html](https://github.com/komejo/setviewport/blob/master/example.html)
-
 
 600 (pixels) is the default.
 
