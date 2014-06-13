@@ -34,16 +34,15 @@ var setViewport = new function() {
     };
 
     // This should contain everything you want to
-    // happen in the mobile state vi JS.
+    // happen only in the mobile state via JS.
     this.mobilePageModsOn = function() {
         self.isMobile = true;
     };
 
+    // This is for when you transition out of the mobile state.
     this.mobilePageModsOff = function() {
         self.isMobile = false;
     };
-
-
 };
 jQuery(document).ready(function($){
     setViewport.init();
